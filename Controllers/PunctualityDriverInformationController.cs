@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Transit_Dev_API_1.Models;
+using Transit_Dev_API_1.Services;
 
 namespace Transit_Dev_API_1.Controllers
 {
@@ -11,10 +13,19 @@ namespace Transit_Dev_API_1.Controllers
     [Route("api/[controller]")]
     public class PunctualityDriverInformationController : Controller
     {
+        private readonly ProgrammedStopService _stopService;
+
+        public PunctualityDriverInformationController(ProgrammedStopService service)
+        {
+            this._stopService = service;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            var result = this._stopService.Get();
+
             return new string[] { "value1", "value2" };
         }
 
