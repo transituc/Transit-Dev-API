@@ -24,8 +24,13 @@ namespace Transit_Dev_API_1.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            // The following statement gets all the programmed stops. 
+            // TODO: Replace it appropriately.
             var result = this._stopService.Get();
 
+            // TODO: Implement your logic.
+
+            // TODO: The following line is just a placeholder you should replace. You can change this method's return type, too.
             return new string[] { "value1", "value2" };
         }
 
