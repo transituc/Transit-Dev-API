@@ -40,5 +40,7 @@ namespace Transit_Dev_API_1.Models
         /// </summary>
         [BsonElement("programmed_time")]
         public decimal ProgrammedTime { get; set; }
+
+        
     }
 }
